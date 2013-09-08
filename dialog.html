@@ -15,60 +15,92 @@
 <div id="impress">
 
     <div class="step" data-x="0">
-        <h3>技术组：</h3> 
-        <p>对web、移动互联及其相关应用感兴趣，有热情编写程序，不畏难题，有一定的团队协作精神。</p>
-    </div>
-
-    <div class="step" data-x="1500">
-        <h3>美工组：</h3> 
-        <p>对平面设计（有一定photoshop、Flash基础）或者web的前端技术感兴趣，认真好学。</p>
-    </div>
-
-    <div class="step" data-x="3000">
         <h3>策划组：</h3> 
         <p>对互网络产品有一定的兴趣，善于思考并擅长交流合作者。</p>
     </div>
 
+    <div class="step" data-x="1500">
+        <h3>技术组：</h3> 
+        <p>对web、移动互联及其相关应用感兴趣，有热情编写程序，不畏难题，有一定的团队协作精神。</p>
+    </div>
+
+    <div class="step" data-x="3000">
+        <h3>用户体验组：</h3> 
+        <p>对平面设计（有一定photoshop、Flash基础）或者web的前端技术感兴趣，认真好学。</p>
+    </div>
+
     <div class="step" data-x="4500" data-rotate="-180">
         <p><a href="javascript:close();">我想我已经知道要去哪个组了</a></p>
-        <p><a href="javascript:Impress.next();">我还是不知道要去哪个组</a></p>
+        <p><a href="javascript:Impress.goto(4);">我还是不知道要去哪个组</a></p>
     </div>
 
     <div class="step" data-x="6000">
         <h3 class="question">现实中的你更倾向于：</h3>
         <ul class="answers">
-            <li class="answer"><a class="select">我选这个</a>写代码</li>
-            <li class="answer"><a class="select">我选这个</a>画图</li>
-            <li class="answer"><a class="select">我选这个</a>打酱油</li>
+            <li class="answer" data-dept="2" data-score="2"><a class="select">我选这个</a>追求美的事物，享受创作的过程。</li>
+            <li class="answer" data-dept="0" data-score="2"><a class="select">我选这个</a>关注互联网行业，团结起志同道合的人。</li>
+            <li class="answer" data-dept="1" data-score="2"><a class="select">我选这个</a>钻研算法，用编程的方式解决生活中的难题。</li>
         </ul>
     </div>
 
     <div class="step" data-x="6000" data-y="1000">
-        <h3 class="question">现实中的你更倾向于：</h3>
+        <h3 class="question">你最熟悉的编程语言是：</h3>
         <ul class="answers">
-            <li class="answer"><a class="select">我选这个</a>写代码</li>
-            <li class="answer"><a class="select">我选这个</a>画图</li>
-            <li class="answer"><a class="select">我选这个</a>打酱油</li>
+            <li class="answer" data-dept="1" data-score="2"><a class="select">我选这个</a>Python/Ruby/Shell</li>
+            <li class="answer" data-dept="1" data-score="0"><a class="select">我选这个</a>C/C++/Java</li>
+            <li class="answer" data-dept="1" data-score="1"><a class="select">我选这个</a>PHP/ASP</li>
         </ul>
     </div>
 
     <div class="step" data-x="6000" data-y="2000">
         <h3 class="question">现实中的你更倾向于：</h3>
         <ul class="answers">
-            <li class="answer"><a class="select">我选这个</a>写代码</li>
-            <li class="answer"><a class="select">我选这个</a>画图</li>
-            <li class="answer"><a class="select">我选这个</a>打酱油</li>
+            <li class="answer" data-dept="0" data-score="0"><a class="select">我选这个</a>独自解决问题</li>
+            <li class="answer" data-dept="0" data-score="2"><a class="select">我选这个</a>领导他人解决问题</li>
+            <li class="answer" data-dept="0" data-score="1"><a class="select">我选这个</a>和他人合作解决问题</li>
         </ul>
     </div>
 
     <div class="step" data-x="6000" data-y="3000">
-        <h3 class="question">现实中的你更倾向于：</h3>
+        <h3 class="question">我对于网页制作的了解程度：</h3>
         <ul class="answers">
-            <li class="answer"><a class="select">我选这个</a>写代码</li>
-            <li class="answer"><a class="select">我选这个</a>画图</li>
-            <li class="answer"><a class="select">我选这个</a>打酱油</li>
+            <li class="answer" data-dept="2" data-score="1"><a class="select">我选这个</a>亲手用frontpage、dreamwaver等软件制作过网页</li>
+            <li class="answer" data-dept="2" data-score="0"><a class="select">我选这个</a>我并不是很了解网页的原理</li>
+            <li class="answer" data-dept="2" data-score="2"><a class="select">我选这个</a>编写过简单的html/css/js代码</li>
         </ul>
     </div>
+
+    <div class="step" data-x="6000" data-y="4000">
+        <h3 class="question">下面的浏览器我更喜欢：</h3>
+        <ul class="answers">
+            <li class="answer" data-dept="2" data-score="0"><a class="select">我选这个</a>IE6/IE7</li>
+            <li class="answer" data-dept="2" data-score="1"><a class="select">我选这个</a>360系列的浏览器</li>
+            <li class="answer" data-dept="2" data-score="2"><a class="select">我选这个</a>Chrome/Firefox/Safari</li>
+        </ul>
+    </div>
+
+    <div class="step" data-x="6000" data-y="5000">
+        <h3 class="question">你曾自己搭建过网站吗：</h3>
+        <ul class="answers">
+            <li class="answer" data-dept="1" data-score="2"><a class="select">我选这个</a>我曾经配置过Apache/IIS在Linux/Windows下搭建网站</li>
+            <li class="answer" data-dept="1" data-score="1"><a class="select">我选这个</a>我曾经配置过Wamp/Lamp在Linux/Windows下搭建网站</li>
+            <li class="answer" data-dept="1" data-score="0"><a class="select">我选这个</a>我曾经自己写过Html/CSS/Javascript，没有写过PHP/ASP等后端代码</li>
+        </ul>
+    </div>
+
+    <div class="step" data-x="6000" data-y="6000">
+        <h3 class="question">我对互联网行业：</h3>
+        <ul class="answers">
+            <li class="answer" data-dept="0" data-score="0"><a class="select">我选这个</a>没有太大兴趣</li>
+            <li class="answer" data-dept="0" data-score="2"><a class="select">我选这个</a>关注新鲜资讯，经常上36Kr、虎嗅网等网站</li>
+            <li class="answer" data-dept="0" data-score="1"><a class="select">我选这个</a>喜欢尝试新的网站或者手机app</li>
+        </ul>
+    </div>
+
+    <div class="step" data-x="6000" data-y="7000" data-rotate="180">
+        <p>经鉴定，我比较适合<span class="group"></span>，<a href="javascript:close();">赶紧回去提交我的资料。</a></p>
+    </div>
+
 
 </div>
 
@@ -76,7 +108,7 @@
 <div class="next">next</div>
 <div class="close">close</div>
 
-<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="impress.js"></script>
 <script type="text/javascript">
 var close = function(){
@@ -85,17 +117,18 @@ var close = function(){
 }
 
 var Impress = impress();
+var rank = [0,0,0];
 
 $('.close').click(function(){
     close();
 });
 
 $('.prev').click(function(){
-   Impress.prev();
+    Impress.prev();
 });
 
 $('.next').click(function(){
-    if(Impress.step()>=2){
+    if(Impress.step() >= 2){
         $('.next').hide();
         $('.prev').hide();
     }
@@ -104,6 +137,18 @@ $('.next').click(function(){
 
 $('.select').click(function(){
     Impress.next();
+    rank[$(this).parent('.answer').data('dept')] += $(this).parent('.answer').data('score');
+    if(Impress.step() === 11){
+        var group="";
+        if(rank[0]>rank[1]&&rank[0]>rank[2]){
+            group = '策划组';
+        }else if(rank[1]>rank[0]&&rank[1]>rank[2]){
+            group = '技术组';
+        }else{
+            group = '美工组';
+        }
+        $('.group').html(group);
+    }
 });
 
 $(document).ready(function(){
