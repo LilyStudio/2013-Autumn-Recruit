@@ -551,17 +551,24 @@
         // `prev` API function goes to previous step (in document order)
         var prev = function () {
             var prev = steps.indexOf( activeStep ) - 1;
-            prev = prev >= 0 ? steps[ prev ] : steps[ steps.length-1 ];
+            // prev = prev >= 0 ? steps[ prev ] : steps[ steps.length-1 ];
             
-            return goto(prev);
+            // return goto(prev);
+
+            if(prev >= 0){
+                return goto(prev);
+            }
         };
         
         // `next` API function goes to next step (in document order)
         var next = function () {
             var next = steps.indexOf( activeStep ) + 1;
-            next = next < steps.length ? steps[ next ] : steps[ 0 ];
+            // next = next < steps.length ? steps[ next ] : steps[ 0 ];
+            // return goto(next);
             
-            return goto(next);
+            if(next < steps.length){
+                return goto(next);
+            }
         };
         
         // Adding some useful classes to step elements.
@@ -635,7 +642,10 @@
             init: init,
             goto: goto,
             next: next,
-            prev: prev
+            prev: prev,
+            step: function(){
+                return steps.indexOf( activeStep );
+            }
         });
 
     };
@@ -707,14 +717,14 @@
                     case 33: // pg up
                     case 37: // left
                     case 38: // up
-                             api.prev();
+                             // api.prev();
                              break;
                     case 9:  // tab
                     case 32: // space
                     case 34: // pg down
                     case 39: // right
                     case 40: // down
-                             api.next();
+                             // api.next();
                              break;
                 }
                 

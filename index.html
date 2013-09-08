@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>小百合工作室招新啦</title>
-<link href="style.css" rel="stylesheet" type="text/css"/>
+<link href="index.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -26,14 +26,15 @@
 	</select></p>
 </form>
 <a class="dialog_hook">看看小组介绍先</a>
-<div class="dialog none">
+<div class="dialog hidden">
 	<iframe src="dialog.html"></iframe>
 </div>
 
 <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
 <script type="text/javascript">
+console.log('喜欢看我们的代码，还是发现了什么bug？不如和我们一起为LilyStudio添砖加瓦吧！')
 $('.dialog_hook').click(function(){
-	$('.dialog').removeClass('none');
+	$('.dialog').removeClass('hidden');
 });
 </script>
 </body>

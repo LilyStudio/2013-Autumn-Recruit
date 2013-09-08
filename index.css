@@ -1,0 +1,19 @@
+.dialog_hook{
+	cursor: pointer;
+}
+
+.dialog.hidden{
+	opacity: 0;
+    z-index: -999;
+}
+
+.dialog{
+    z-index: 999;
+    width: 600px;
+    height: 300px;
+}
+
+.dialog iframe{
+    width: 100%;
+    height: 100%;
+}
