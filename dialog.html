@@ -138,13 +138,14 @@ $('.next').click(function(){
 $('.select').click(function(){
     Impress.next();
     rank[$(this).parent('.answer').data('dept')] += $(this).parent('.answer').data('knar');
+    $('#question',$(window.parent.document)).val($('#question',$(window.parent.document)).val()+$(this).parent('.answer').data('knar'));
     if(Impress.step() === 11){
         var group="";
         if(rank[0]>rank[1]&&rank[0]>rank[2]){
             group = '策划组';
         }else if(rank[1]>rank[0]&&rank[1]>rank[2]){
             group = '技术组';
-        }else{
+        }else{ 
             group = '美工组';
         }
         $('.group').html(group);
