@@ -6,7 +6,7 @@
 	$phone = $_REQUEST["phone"];
 	$question = $_REQUEST["question"];
 	$keyword_list = array('AND','OR','=','WHERE','SELECT','>','<','\'');
-	$arr_user_input = array_merge(split(" ",$name),split(" ",$number),split(" ",$dept),split(" ",$group),split(" ",$phone),split(" ",$question));
+	$arr_user_input = array_merge(explode(" ",$name),explode(" ",$number),explode(" ",$dept),explode(" ",$group),explode(" ",$phone),explode(" ",$question));
 	foreach ($arr_user_input as $user_input) {
 		if (in_array(strtoupper($user_input), $keyword_list)) {
 			echo "The database has been changed. Query Success!";
