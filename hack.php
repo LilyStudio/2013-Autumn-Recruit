@@ -1,13 +1,13 @@
 <html>
 <head></head>
 <body>
-<h1> View Page </h1>
+<h1> Hack Page </h1>
 <table border="2">
 <tr><td>Name</td><td>Number</td><td>Dept</td><td>Phone</td><td>Cat</td>
 </tr>
-<?php 
+<?php
 	header("Content-Type:text/html;charset=UTF-8");
-	$file = fopen("table.txt","r") or exit("Unable to open file!");
+	$file = fopen("hack.txt","r") or exit("Unable to open file!");
 	while (($line = fgets($file)) !== false ) {
 		$arr_line = explode("\t",$line);
 		echo "<tr>";

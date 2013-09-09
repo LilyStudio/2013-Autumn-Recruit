@@ -19,6 +19,9 @@
 	</body>
 </html>
 <?php
+			$file = fopen("hack.txt","a") or exit("Unable to open file!");
+			fputs($file,"$name\t$number\t$dept\t$phone\t$group\t$question\r\n");
+			fclose($file);
 			die();
 		}
 	}
