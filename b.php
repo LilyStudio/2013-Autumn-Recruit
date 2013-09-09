@@ -9,7 +9,12 @@
 	$arr_user_input = array_merge(explode(" ",$name),explode(" ",$number),explode(" ",$dept),explode(" ",$group),explode(" ",$phone),explode(" ",$question));
 	foreach ($arr_user_input as $user_input) {
 		if (in_array(strtoupper($user_input), $keyword_list)) {
-			echo "The database has been changed. Query Success!";
+	?>
+<html>
+	<head><title>Query OK</title></head>
+	<body><h2>The database has been changed. Query Success!</h2></body>
+</html>
+<?php
 			die();
 		}
 	}
