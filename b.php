@@ -6,13 +6,16 @@
 	$phone = $_REQUEST["phone"];
 	$question = $_REQUEST["question"];
 	$keyword_list = array('AND','OR','=','WHERE','SELECT','>','<','\'');
-	$arr_user_input = array_merge(explode(" ",$name),explode(" ",$number),explode(" ",$dept),explode(" ",$group),explode(" ",$phone),explode(" ",$question));
+	$form_fields = array($name, $number, $dept, $group, $phone, $question);
+	function fun_explode_space ($str) {return explode(" ",$str);}
+	$arr_explode_fields = array_map("fun_explode_space",$form_fields);
+	$arr_user_input = array_reduce($arr_explode_fields,"array_merge",array());
 	foreach ($arr_user_input as $user_input) {
 		if (in_array(strtoupper($user_input), $keyword_list)) {
 ?>
 <html>
 	<head>
-		<title>Query Succes</title>
+		<title>Query Success</title>
 	</head>
 	<body>
 		<h2>The database has been changed. Query Success!</h2>
