@@ -41,7 +41,7 @@
 	<body>
 		<h2>
 		Thanks for your application, <?php echo $name ?>!
-		</br>
+		<br />
 		Your information has been recorded.
 		</h2>
 	</body>
