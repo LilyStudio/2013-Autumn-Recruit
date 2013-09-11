@@ -12,8 +12,9 @@
 	<div id="container">
 		<div class="logo"></div>
 		<div class="cloud">
-			<span class="dialog-hook">看看小组介绍先</span>
-			<div class="dialog hidden">
+			<div class="prev">prev</div>
+            <div class="next">next</div>   
+			<div class="dialog">
 	            <iframe src="dialog.html"></iframe>
             </div>
 		</div>	
@@ -44,10 +45,23 @@
 
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
-console.log('喜欢看我们的代码，还是发现了什么bug？不如和我们一起为LilyStudio添砖加瓦吧！')
-$('.dialog-hook').click(function(){
-	$('.dialog').removeClass('hidden');
+console.log('ʕ•̫͡•ʔ 快来加入我们吧！');
+
+var iframe = window.frames[0];
+
+$('.prev').click(function(){
+    iframe.Impress.prev();
 });
+
+$('.next').click(function(){
+    if(iframe.Impress.step() >= 2){
+        $('.next').hide();
+        $('.prev').hide();
+    }
+    iframe.Impress.next();
+});
+
+
 </script>
 </body>
 
