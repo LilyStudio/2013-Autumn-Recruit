@@ -16,19 +16,51 @@ body{
     width: 1200px;
     padding: 40px;
     margin: 20px auto;
-/*    font-family: 'PT Serif', georgia, serif;*/
-    font-size: 56px;
+    font-family: "Microsoft YaHei";
+    font-size: 60px;
     line-height: 1.5;
 }
 
 .answer{
-    list-style: none;
     cursor: pointer;
+    line-height: 1.8em;
 }
 
-.select{
-    width: 23px;
-    height: 23px;
-    display: inline-block;
-    background: green;
+.answer:hover{
+    text-shadow: 0 0 8px rgba(3, 53, 60, 0.68);
+}
+
+.idontknow{
+    margin-top: 100px;
+    margin-left: 170px; 
+    font-size: 72px;
+}
+
+.idontknow a:hover{
+    text-shadow: 0 0 10px #fff;}
+
+.idontknow a{
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+    text-decoration: none;
+}
+
+.conclusion{
+    color: #fff;
+    text-shadow: 0 0 6px #fff;
+    font-size: 72px;
+}
+
+.group{
+    font-size: 90px;
+    font-weight: bold;
+    color: #ffbd3c;
+    margin: 0 8px;
+}
+
+.hand{
+    width: 160px;
+    height: 200px;
+    margin: 0 auto;
+    background: url('./images/hand.png');
 }
