@@ -8,29 +8,44 @@
 </head>
 
 <body>
-<form action="b.php" method="post">
-	<p><label for="name">我的大名</label><input type="text" id="name" name="name" /></p>
-	<p><label for="number">学号</label><input type="text" id="number" name="number" /></p>
-	<p><label for="dept">院系</label><input type="text" id="dept" name="dept" /></p>
-	<p><label for="phone">电话号码</label><input type="text" id="phone" name="phone" /></p>
-	<p><label for="group">我想加入</label>
-	<select id="group" name="group">
-		<option>策划组</option>
-		<option>技术组</option>
-		<option>用户体验组</option>
-	</select></p>
-	<input type="hidden" value="" id="question" name="question" />
-	<input type="submit" />
-</form>
-<a class="dialog_hook">看看小组介绍先</a>
-<div class="dialog hidden">
-	<iframe src="dialog.html"></iframe>
-</div>
+
+	<div id="container">
+		<div class="logo"></div>
+		<div class="cloud">
+			<span class="dialog-hook">看看小组介绍先</span>
+			<div class="dialog hidden">
+	            <iframe src="dialog.html"></iframe>
+            </div>
+		</div>	
+        <form action="b.php" method="post" class="form clearfix">
+        	<div class="form-left">
+        		<p class="field"><label for="name">我的大名</label><input type="text" id="name" name="name" /></p>
+	            <p class="field"><label for="number">学号</label><input type="text" id="number" name="number" /></p>
+        	    <p class="field"><label for="dept">院系</label><input type="text" id="dept" name="dept" /></p>
+	            <p class="field"><label for="phone">电话号码</label><input type="text" id="phone" name="phone" /></p>
+	            <p class="field">
+	            	<label for="group">我想加入</label>
+	                <select id="group" name="group">
+		                <option>策划组</option>
+		                <option>技术组</option>
+		                <option>用户体验组</option>
+	                </select>
+	            </p>
+	            <input type="hidden" value="" id="question" name="question" />
+        	</div>
+        	<div class="form-right">
+        		<p><input type="submit" value="报名"/></p>
+            </div>        
+        </form>
+        <div id="footer">
+        	<p>Copyright 2013.All rights Reserved. <a href="http://wiki.lilystudio.org/" target="_blank">小百合工作室</a></p>
+        </div>
+	</div>
 
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
 console.log('喜欢看我们的代码，还是发现了什么bug？不如和我们一起为LilyStudio添砖加瓦吧！')
-$('.dialog_hook').click(function(){
+$('.dialog-hook').click(function(){
 	$('.dialog').removeClass('hidden');
 });
 </script>
