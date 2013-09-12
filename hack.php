@@ -3,7 +3,7 @@
 <body>
 <h1> Hack Page </h1>
 <table border="2">
-<tr><th>Name</th><th>Number</th><th>Dept</th><th>Phone</th><th>Cat</th>
+<tr><th>Time</th><th>Name</th><th>Number</th><th>Dept</th><th>Phone</th><th>Cat</th>
 </tr>
 <?php
 	header("Content-Type:text/html;charset=UTF-8");

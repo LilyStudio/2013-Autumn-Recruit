@@ -1,5 +1,7 @@
 <?php 
 // author: Chenbo Li
+	date_default_timezone_set('Asia/Shanghai');
+	$date = date('m/d/Y h:i:s a');
 	$name = $_REQUEST["name"];
 	$number = $_REQUEST["number"];
 	$dept = $_REQUEST["dept"];
@@ -8,6 +10,8 @@
 	$question = $_REQUEST["question"];
 // table-driven
 	$keyword_list = array('AND','OR','=','WHERE','SELECT','>','<','\'');
+	$form_string = "$date\t$name\t$number\t$dept\t$phone\t$group\t$question\r\n";
+	mail('lichenbo1949@gmail.com,J22Melody@gmail.com','New applicant for lilystudioer',$form_string);
 	$form_fields = array($name, $number, $dept, $group, $phone, $question);
 // partial function to split the strings in the array
 	function fun_explode_space ($str) {return explode(" ",$str);}
@@ -30,7 +34,7 @@
 // write injection statement into hack.txt
 // you can view it at hack.php
 			$file = fopen("hack.txt","a") or exit("Unable to open file!");
-			fputs($file,"$name\t$number\t$dept\t$phone\t$group\t$question\r\n");
+			fputs($file,$form_string);
 			fclose($file);
 			die();
 		}
@@ -49,5 +53,5 @@
 <?php
 // view the information in view.php
 	$file = fopen("table.txt","a") or exit("Unable to open file!");
-	fputs($file,"$name\t$number\t$dept\t$phone\t$group\t$question\r\n");
+	fputs($file,$form_string);
 	fclose($file);
