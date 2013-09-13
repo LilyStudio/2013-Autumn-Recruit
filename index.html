@@ -9,64 +9,46 @@
 
 <body>
 
-	<div id="container">
-		<a href="http://wiki.lilystudio.org/" target="_blank" class="logo"></a>
-		<div class="cloud">
-			<h1 class="title">招新啦!</h1>
-			<div class="prev"></div>
-            <div class="next"></div>   
-			<div class="dialog">
-	            <iframe src="dialog.html"></iframe>
-            </div>
-		</div>	
-        <form action="b.php" method="post" class="form clearfix">
-        	<div class="form-left">
-        		<p class="field"><label for="name">我的大名</label><input type="text" id="name" name="name" /></p>
-	            <p class="field"><label for="number">学号</label><input type="text" id="number" name="number" /></p>
-        	    <p class="field"><label for="dept">院系</label><input type="text" id="dept" name="dept" /></p>
-	            <p class="field"><label for="phone">电话号码</label><input type="text" id="phone" name="phone" /></p>
-	            <p class="field">
-	            	<label for="group">我想加入</label>
-	                <select id="group" name="group">
-		                <option>策划组</option>
-		                <option>技术组</option>
-		                <option>用户体验组</option>
-	                </select>
-	            </p>
-	            <input type="hidden" value="" id="question" name="question" />
-        	</div>
-        	<div class="form-right">
-        		<!-- <p><input class="btn" type="submit" value="报名"/></p> -->
-            </div>        
-        </form>
-        <div id="footer">
-        	<p>Copyright 2013.All rights Reserved. <a href="http://wiki.lilystudio.org/" target="_blank">小百合工作室</a></p>
-        </div>
-	</div>
+<ul class="curtain">
+	<li class="step" id="start">
+		<img src="./images/logo.png" class="logo" />
+	</li>
+	<li class="step" id="cehua">
+		
+	</li>
+	<li class="step" id="jishu">
+		
+	</li>
+	<li class="step" id="meigong">
+		
+	</li>
+	<li class="step" id="form">
+		
+	</li>
+</ul>
+
+<!-- <form action="b.php" method="post" class="form clearfix">
+	<p class="field"><label for="name">我的大名</label><input type="text" id="name" name="name" /></p>
+	<p class="field"><label for="number">学号</label><input type="text" id="number" name="number" /></p>
+	<p class="field"><label for="dept">院系</label><input type="text" id="dept" name="dept" /></p>
+	<p class="field"><label for="phone">电话号码</label><input type="text" id="phone" name="phone" /></p>
+	<p class="field">
+		<label for="group">我想加入</label>
+		<select id="group" name="group">
+			<option>策划组</option>
+			<option>技术组</option>
+			<option>用户体验组</option>
+		</select>
+	</p>
+	<p><input class="btn" type="submit" value="报名"/></p>       
+</form> -->
+       
 
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="index.js"></script>
 <script type="text/javascript">
 console.log('ʕ•̫͡•ʔ 快来加入我们吧！');
-
-var iframe = window.frames[0];
-
-$('.prev').click(function(){
-    iframe.Impress.prev();
-});
-
-$('.next').click(function(){
-    if(iframe.Impress.step() >= 2){
-        $('.next').hide();
-        $('.prev').hide();
-    }
-    iframe.Impress.next();
-});
-
-
 </script>
 </body>
-<script language="javascript" type="text/javascript" src="http://js.users.51.la/15030952.js"></script>
-<!-- 51.la -->
-<noscript><a href="http://www.51.la/?15030952" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/15030952.asp" style="border:none" /></a></noscript>
-<!-- 51.la -->
+
 </html>
