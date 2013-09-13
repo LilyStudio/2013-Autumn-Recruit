@@ -9,6 +9,9 @@ body{
     background-size: 100%, 100%;
 }
 
+body > a > img{
+	display:none;
+}
 #container{
 	width: 960px;
 	margin: 0 auto;
