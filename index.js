@@ -1,6 +1,7 @@
 (function(){
 	$.fn.curtain = function(){
 		setTimeout(function(){$(window).scrollTop(0)},0);
+
 		var stepHeight = screen.availHeight;
 		var steps = $(this).children('.step');
 
@@ -15,8 +16,11 @@
     	    var current = Math.floor(top/stepHeight);
     	    steps.hide();
     	    steps.eq(current).height(stepHeight).css({top:0}).show();
-
     		steps.eq(current+1).height(top%stepHeight).css({'top':stepHeight-top%stepHeight}).show();
+        });
+
+        $('.curtain-controler .step').click(function(){
+            $(window).scrollTop($(this).data('num')*stepHeight);
         });
 	}
 

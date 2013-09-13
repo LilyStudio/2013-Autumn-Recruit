@@ -12,32 +12,51 @@ body{
 	padding: 0;
 }
 
-.step{
+.curtain .step{
 	width: 100%;
 	display: block;
 	text-align: center;
 }
 
-#start{
+.curtain-controler{
+	position: fixed;
+	top: 30%;
+	right: 0;
+	z-index: 99;
+}
+
+.curtain-controler .step{
+	list-style: none;
+	cursor: pointer;
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #fff;
+}
+
+.start{
 	background: rgb(255, 252, 221);
 }
 
-#cehua{
+.cehua{
 	background: rgb(227, 36, 0);
 }
 
-#jishu{
+.jishu{
 	background: rgb(59, 136, 254);
 }
 
-#meigong{
+.meigong{
 	background: rgb(197, 187, 1);
 }
 
-#form{
+.form{
 	background: rgb(135, 78, 255);
 }
 
 .logo{
-	margin-top: 200px;
+	margin-top: 100px;
 }
