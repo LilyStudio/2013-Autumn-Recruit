@@ -24,6 +24,14 @@
         });
 	}
 
+	$('.curtain-controler .step').hover(function(){
+        $(this).animate({width:"261px"});
+        $(this).find('.hidden').show();
+    },function(){
+    	$(this).animate({width:"50px"});
+    	$(this).find('.hidden').hide();
+    });
+
 	$(document).ready(function(){
         $('.curtain').curtain();   
 	}); 
