@@ -20,14 +20,16 @@
         });
 
         $('.curtain-controler .step').click(function(){
-            $(window).scrollTop($(this).data('num')*stepHeight);
+            $('html,body').animate({scrollTop:$(this).data('num')*stepHeight},{queue:false,duration:1500,easing:'linear'});
         });
 	}
 
 	$('.curtain-controler .step').hover(function(){
+        // $(this).animate({width:"261px"},{queue:false});
         $(this).animate({width:"261px"});
         $(this).find('.hidden').show();
     },function(){
+    	// $(this).animate({width:"50px"},{queue:false});
     	$(this).animate({width:"50px"});
     	$(this).find('.hidden').hide();
     });
