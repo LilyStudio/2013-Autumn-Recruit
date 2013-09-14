@@ -11,19 +11,40 @@
 
 <ul class="curtain">
 	<li class="step start">
-		<img src="./images/logo.png" class="logo" />
+		<a href="http://lilystudio.org" target="_blank"><img src="./images/logo.png" class="logo" /></a>
+		<div class="cloud">
+			<img src="./images/zhaoxinla.png" alt="招新啦！" class="zhaoxinla" />
+		</div>
+		<img src="./images/scroll.jpg" class="scroll" />
 	</li>
 	<li class="step cehua">
-		
+		<h2>策划组</h2>
+		<p>负责策划各类工作安排，需要对技术有一定热情及适当的了解</p>
 	</li>
 	<li class="step jishu">
-		
+		<h2>技术组</h2>
+		<p>负责产品的代码实现，需要拥有较强的编写代码能力</p>
 	</li>
 	<li class="step meigong">
-		
+		<h2>美工组</h2>
+		<p>负责产品的前端、交互的设计，需要掌握 HTML/CSS/JS</p>
 	</li>
 	<li class="step form">
-		
+		<form action="b.php" method="post form clearfix">
+			<p class="field"><label for="name">我的大名</label><input type="text" id="name" name="name" /></p>
+			<p class="field"><label for="number">学号</label><input type="text" id="number" name="number" /></p>
+			<p class="field"><label for="dept">院系</label><input type="text" id="dept" name="dept" /></p>
+			<p class="field"><label for="phone">电话号码</label><input type="text" id="phone" name="phone" /></p>
+			<p class="field">
+				<label for="group">我想加入</label>
+				<select id="group" name="group">
+					<option>策划组</option>
+					<option>技术组</option>
+					<option>美工组</option>
+				</select>
+			</p>
+			<p><input class="btn" type="submit" value="报名"/></p>       
+		</form>
 	</li>
 </ul>
 
@@ -45,21 +66,7 @@
 	</li>
 </ul>
 
-<!-- <form action="b.php" method="post form clearfix">
-	<p class="field"><label for="name">我的大名</label><input type="text" id="name" name="name" /></p>
-	<p class="field"><label for="number">学号</label><input type="text" id="number" name="number" /></p>
-	<p class="field"><label for="dept">院系</label><input type="text" id="dept" name="dept" /></p>
-	<p class="field"><label for="phone">电话号码</label><input type="text" id="phone" name="phone" /></p>
-	<p class="field">
-		<label for="group">我想加入</label>
-		<select id="group" name="group">
-			<option>策划组</option>
-			<option>技术组</option>
-			<option>用户体验组</option>
-		</select>
-	</p>
-	<p><input class="btn" type="submit" value="报名"/></p>       
-</form> -->
+
        
 
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>

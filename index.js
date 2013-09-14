@@ -10,7 +10,7 @@
 
         steps.eq(0).height(stepHeight).css({top:0}).show();
         steps.eq(1).height(0).css({'top':stepHeight}).show();
-
+        
         $(window).scroll(function(){
     	    var top = $(window).scrollTop();
     	    var current = Math.floor(top/stepHeight);
@@ -20,7 +20,11 @@
         });
 
         $('.curtain-controler .step').click(function(){
-            $('html,body').animate({scrollTop:$(this).data('num')*stepHeight},{queue:false,duration:1500,easing:'linear'});
+            $('html,body').animate({scrollTop:$(this).data('num')*stepHeight},{queue:false,duration:1200});
+        });
+
+        $('.scroll').click(function(){
+            $('html,body').animate({scrollTop:stepHeight},{queue:false,duration:1200});
         });
 	}
 

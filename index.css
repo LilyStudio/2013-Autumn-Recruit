@@ -73,6 +73,54 @@ body,ul,li{
 	background: rgb(135, 78, 255);
 }
 
+.logo,.cloud,.scroll{
+	display: block;
+	margin: 0 auto;
+}
+
 .logo{
 	margin-top: 50px;
+}
+
+.cloud{
+	margin-top: 85px;
+	width: 288px;
+	height: 175px;
+	background: url('./images/cloud.png') no-repeat center;
+}
+
+.cloud .zhaoxinla{
+	margin-top: 90px;
+
+	-webkit-transition: All 0.5s ease;
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
+    transition: All 0.5s ease;
+}
+
+.cloud:hover .zhaoxinla{
+	-webkit-transform: rotate(-4deg) scale(1.15) skew(0deg) translate(0px);
+    -moz-transform: rotate(-4deg) scale(1.15) skew(0deg) translate(0px);
+    -o-transform: rotate(-4deg) scale(1.15) skew(0deg) translate(0px);
+    -ms-transform: rotate(-4deg) scale(1.15) skew(0deg) translate(0px);
+    transform: rotate(-4deg) scale(1.15) skew(0deg) translate(0px);
+}
+
+.scroll{
+    margin-top: 120px;
+    bottom: 50px;
+    cursor: pointer;
+
+    -webkit-transition: All 0.5s ease;
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
+    transition: All 0.5s ease;
+}
+
+.scroll:hover{
+    -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px,8px);
+    -moz-transform: rotate(0deg) scale(1) skew(0deg) translate(0px,8px);
+    -o-transform: rotate(0deg) scale(1) skew(0deg) translate(0px,8px);
+    -ms-transform: rotate(0deg) scale(1) skew(0deg) translate(0px,8px);
+    transform: rotate(0deg) scale(1) skew(0deg) translate(0px,8px);
 }
