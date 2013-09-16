@@ -71,7 +71,10 @@
             data: data,
             type: $(this).attr('method'),
             success: function(data){
-                $('#submit').hide();
+                $('#submit').fadeTo("slow",0).hide();
+                $('input').add($('textarea')).add($('select')).each(function(){
+                    $(this)[0].disabled = true;
+                });
                 $('.ok').show().transition({'x':0,'y':0});
             },
             cache: false,
