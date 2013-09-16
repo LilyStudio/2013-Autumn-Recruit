@@ -71,6 +71,7 @@
             data: data,
             type: $(this).attr('method'),
             success: function(response){
+                // console.log(response);
                 if(JSON.parse(response).success){
                     $('#submit').fadeTo("slow",0).hide();
                     $('input').add($('textarea')).add($('select')).each(function(){
@@ -82,7 +83,7 @@
                 }
             },
             cache: false,
-            contentType: false,
+            // contentType: false,
             processData: false
         });
         return false;
