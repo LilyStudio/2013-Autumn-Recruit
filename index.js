@@ -17,6 +17,11 @@
     	    steps.hide();
     	    steps.eq(current).height(stepHeight).css({top:0}).show();
     		steps.eq(current+1).height(top%stepHeight).css({'top':stepHeight-top%stepHeight}).show();
+            if(current === steps.length-1){
+                $('.scroll').hide();
+            }else{
+                $('.scroll').show();
+            }
         });
 
         $('.curtain-controler .step').click(function(){
@@ -24,7 +29,9 @@
         });
 
         $('.scroll').click(function(){
-            $('html,body').animate({scrollTop:stepHeight},{queue:false,duration:1200});
+            var top = $(window).scrollTop();
+            var current = Math.floor(top/stepHeight);
+            $('html,body').animate({scrollTop:stepHeight*(current+1)},{queue:false,duration:1200});
         });
 	}
 
