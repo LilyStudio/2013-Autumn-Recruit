@@ -83,7 +83,7 @@
                 }
             },
             cache: false,
-            // contentType: false,
+            contentType: false,
             processData: false
         });
         return false;
