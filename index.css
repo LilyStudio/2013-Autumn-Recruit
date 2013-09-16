@@ -1,6 +1,6 @@
 @font-face{
     font-family: 'snowren';
-    src: url('./snowren.ttf');
+    src: url('./SNOWREN.ttf');
 }
 
 .clearfix:after{
@@ -149,7 +149,7 @@ body,ul,li{
 }
 
 .curtain-controler .form{
-	background: rgb(138, 30, 130);
+	background: rgb(112, 26, 106);
 }
 
 .logo,.cloud,.scroll{
