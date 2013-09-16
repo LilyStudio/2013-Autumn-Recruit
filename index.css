@@ -208,7 +208,7 @@ body,ul,li{
 
 .register{
 	margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 36px;
     text-align: left;
     width: 290px;
 }
@@ -256,7 +256,7 @@ body,ul,li{
 	margin-top: 8px;
 	resize: none;
 	width: 272px;
-	height: 120px;
+	height: 110px;
 }
 
 .register .btn{
