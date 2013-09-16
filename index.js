@@ -36,13 +36,29 @@
 	}
 
 	$('.curtain-controler .step').hover(function(){
-        // $(this).animate({width:"261px"},{queue:false});
-        $(this).animate({width:"261px"});
+        // $(this).animate({width:"220px"},{queue:false});
+        $(this).animate({width:"220px"});
         $(this).find('.hidden').show();
     },function(){
     	// $(this).animate({width:"50px"},{queue:false});
     	$(this).animate({width:"50px"});
     	$(this).find('.hidden').hide();
+    });
+
+    $('.register').submit(function(){
+        var registerData = new FormData($(this));
+        var url = $(this).attr('action');
+        $.ajax({
+            url: url,
+            data: registerData,
+            processData: false,
+            type: 'POST',
+            success: function(data){
+                $(this).find('#submit').hide();
+                $('.ok').show().transition({'x':0,'y':0});
+            }
+        })
+        return false;
     });
 
 	$(document).ready(function(){

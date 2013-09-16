@@ -11,7 +11,7 @@
 
 <ul class="curtain">
 	<li class="step start">
-		<a href="http://lilystudio.org" target="_blank"><img src="./images/logo.png" class="logo" /></a>
+		<a href="http://lilystudio.org" target="_blank" class="logo"><img src="./images/logo.png" /></a>
 		<div class="cloud">
 			<img src="./images/zhaoxinla.png" alt="招新啦！" class="zhaoxinla" />
 		</div>
@@ -43,30 +43,38 @@
 	</li>
 	<li class="step form">
 		<div class="decorator"></div>
+		<h2 class="join">加入我们</h2>
 		<form action="b.php" method="post" class="register">
-			<h2>加入我们</h2>
-			<p class="field"><label for="name">我的大名</label><input type="text" id="name" name="name" /></p>
-			<p class="field"><label for="number">学号</label><input type="text" id="number" name="number" /></p>
-			<p class="field"><label for="dept">院系</label><input type="text" id="dept" name="dept" /></p>
-			<p class="field"><label for="phone">电话号码</label><input type="text" id="phone" name="phone" /></p>
-			<p class="field">
-				<label for="group">我想加入</label>
-				<select id="group" name="group">
-					<option>策划组</option>
-					<option>技术组</option>
-					<option>美工组</option>
-				</select>
-			</p>
-			<p class="field"><label for="exper">个人经历</label><textarea id="exper" name="exper"></textarea></p>
-			<p class="field"><label for="hobby">兴趣爱好</label><textarea id="hobby" name="hobby"></textarea></p>
-			<p><input class="btn fr" type="submit" value="报名"/></p>       
+
+			<div class="fl left">
+				<p class="field"><label for="name">我的大名</label><input type="text" id="name" name="name" /></p>
+				<p class="field"><label for="number">学号</label><input type="text" id="number" name="number" /></p>
+				<p class="field"><label for="dept">院系</label><input type="text" id="dept" name="dept" /></p>
+				<p class="field"><label for="phone">电话号码</label><input type="text" id="phone" name="phone" /></p>
+				<p class="field">
+					<label for="group">我想加入</label>
+					<select id="group" name="group">
+						<option>策划组</option>
+						<option>技术组</option>
+						<option>美工组</option>
+					</select>
+				</p>
+			</div>
+			
+			<div class="fl right">
+				<p class="field"><label for="exper">个人经历</label><textarea id="exper" name="exper"></textarea></p>
+			    <p class="field"><label for="hobby">兴趣爱好</label><textarea id="hobby" name="hobby"></textarea></p>
+			    <p><input class="btn fr" type="submit" id="submit" value="报名"/></p>  
+			</div>
+			
+			<div class="ok" style="display:none;"></div> 
 		</form>
 	</li>
 </ul>
 
 <ul class="curtain-controler">
 	<li class="step start" data-num="0">
-		<img src="./images/home.jpg" class="fl"><span class="hidden fr" style="display:none">小百合工作室招新啦！</span>
+		<img src="./images/home.jpg" class="fl"><span class="hidden fr" style="display:none">LilyStudio招新啦！</span>
 	</li>
 	<li class="step jishu" data-num="1">
 		<span class="fl" style="margin-left:20px;">1</span><span class="hidden fr" style="display:none">技术组</span> 
@@ -86,6 +94,7 @@
        
 
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jquery.transit.min.js"></script>
 <script type="text/javascript" src="index.js"></script>
 <script type="text/javascript">
 console.log('ʕ•̫͡•ʔ 快来加入我们吧！');
