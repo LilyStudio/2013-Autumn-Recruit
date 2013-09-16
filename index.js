@@ -70,12 +70,17 @@
             url: url,
             data: data,
             type: $(this).attr('method'),
-            success: function(data){
-                $('#submit').fadeTo("slow",0).hide();
-                $('input').add($('textarea')).add($('select')).each(function(){
-                    $(this)[0].disabled = true;
-                });
-                $('.ok').show().transition({'x':0,'y':0});
+            success: function(response){
+                console.log(response);
+                if(response['success']){
+                    $('#submit').fadeTo("slow",0).hide();
+                    $('input').add($('textarea')).add($('select')).each(function(){
+                        $(this)[0].disabled = true;
+                    });
+                    $('.ok').show().transition({'x':0,'y':0});
+                }else{
+                    alert('服务器好像有点问题哦。如果你认为这是一个bug，请联系J22Melody@Gmail.com，谢谢你的反馈。');
+                }
             },
             cache: false,
             contentType: false,
