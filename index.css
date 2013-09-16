@@ -1,6 +1,6 @@
 @font-face{
     font-family: 'snowren';
-    src: url('snowren.ttf');
+    src: url('./SNOWREN.ttf');
 }
 
 .clearfix:after{
@@ -109,7 +109,7 @@ body,ul,li{
 }
 
 .curtain-controler .step .hidden{
-	margin-right: 16px;
+	margin-right: 8px;
 }
 
 .start{
@@ -124,16 +124,32 @@ body,ul,li{
 	background: rgb(197, 187, 1);
 }
 
+.curtain-controler .cehua{
+	background: rgb(197, 170, 1);
+}
+
 .jishu{
 	background: #af0244;
+}
+
+.curtain-controler .jishu{
+	background: rgb(165, 2, 60);
 }
 
 .meigong{
 	background: #07a0a8;
 }
 
+.curtain-controler .meigong{
+	background: rgb(7 ,150, 160);
+}
+
 .form{
 	background: #2a0f3c;
+}
+
+.curtain-controler .form{
+	background: rgb(112, 26, 106);
 }
 
 .logo,.cloud,.scroll{
@@ -144,11 +160,17 @@ body,ul,li{
 .logo{
 	margin-top: 50px;
 	border: 0;
+	width: 500px;
+	height: 152px;
 
 	-webkit-transition: All 0.5s ease;
     -moz-transition: All 0.5s ease;
     -o-transition: All 0.5s ease;
     transition: All 0.5s ease;
+}
+
+.logo img{
+	border: 0;
 }
 
 .logo:hover{
@@ -204,23 +226,34 @@ body,ul,li{
 }
 
 .register{
-	margin: 0 auto;
-    margin-top: 36px;
+	margin-left: 220px;
+    margin-top: 180px;
     text-align: left;
-    width: 290px;
+    height: 200px;
+    position: relative;
+    -moz-perspective: 201px;
+    -webkit-perspective: 201px;
+    perspective: 201px;
+    padding: 0;
 }
 
-.register h2{
+.left{
+	margin-right: 61px;
+	clear: left;
+}
+
+.join{
 	font-size: 60px;
 	font-weight: normal;
-	margin-left: -180px;
-	margin-bottom: 26px;
+	margin-left: 140px;
+	float: left;
 }
 
 .register .field label{
 	font-size: 22px;
 	width: 120px;
 	display: inline-block;
+	vertical-align:top;
 }
 
 .register .field input,.register .field textarea,.register .field select{
@@ -240,20 +273,22 @@ body,ul,li{
 	margin-left: -8px;
 	width: 100px;
 	height: 30px;
+	width: 120px;
 }
 
 .register .field input{
 	height: 22px;
 	line-height: 30px;
-	width: 150px;
+	width: 100px;
+	margin-bottom: 14px;
 }
 
 .register .field textarea{
-	display: block;
 	margin-top: 8px;
 	resize: none;
-	width: 272px;
+	width: 240px;
 	height: 110px;
+	overflow: auto;
 }
 
 .register .btn{
@@ -268,4 +303,22 @@ body,ul,li{
 	color: #fff;
 	font-family: "Arial";
 	font-weight: bold;
+	margin-top: 20px;
 }
+
+.register .ok{
+	width: 200px;
+	height: 204px;
+	background: url('./images/ok.png') no-repeat center;
+	position: absolute;
+	top: 60px;
+	left: 230px;
+	z-index: 999;
+
+    -webkit-transform: translateZ(200px);
+    -moz-transform: translateZ(200px);
+    -o-transform: translateZ(200px);
+    -ms-transform: translateZ(200px);
+    transform: translateZ(200px);
+}
+

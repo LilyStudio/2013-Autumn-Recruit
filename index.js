@@ -36,13 +36,49 @@
 	}
 
 	$('.curtain-controler .step').hover(function(){
-        // $(this).animate({width:"261px"},{queue:false});
-        $(this).animate({width:"261px"});
+        // $(this).animate({width:"220px"},{queue:false});
+        $(this).animate({width:"220px"});
         $(this).find('.hidden').show();
     },function(){
     	// $(this).animate({width:"50px"},{queue:false});
     	$(this).animate({width:"50px"});
     	$(this).find('.hidden').hide();
+    });
+
+    $('.register').submit(function(){
+
+        if($('#name').val().length == 0){
+            alert('请填写真实有效的姓名');
+            return false;
+        }
+        if($('#number').val().length == 0){
+            alert('请填写真实有效的学号');
+            return false;
+        }
+        if($('#dept').val().length == 0){
+            alert('请填写真实有效的院系');
+            return false;
+        }
+        if($('#phone').val().length == 0){
+            alert('请填写真实有效的电话号码');
+            return false;
+        }
+
+        var data = new FormData($(this)[0]);
+        var url = $(this).attr('action');
+        $.ajax({
+            url: url,
+            data: data,
+            type: $(this).attr('method'),
+            success: function(data){
+                $('#submit').hide();
+                $('.ok').show().transition({'x':0,'y':0});
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+        return false;
     });
 
 	$(document).ready(function(){
