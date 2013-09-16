@@ -45,5 +45,5 @@
 	fputs($file,$form_string);
 	fclose($file);
 	header('Çontent-Type: application/json');
-	$arr_json["success"] = "true";
+	$arr_json["success"] = true;
 	echo json_encode($arr_json);
