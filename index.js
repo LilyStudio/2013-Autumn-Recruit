@@ -85,6 +85,10 @@
     });
 
 	$(document).ready(function(){
-        $('.curtain').curtain();   
+        //判断是否为手机浏览器
+        var u = navigator.userAgent; 
+        if(!(u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) || (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1))) { 
+            $('.curtain').curtain();  
+        }
 	}); 
 })();
