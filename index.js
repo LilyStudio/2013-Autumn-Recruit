@@ -13,6 +13,11 @@
         
         $(window).scroll(function(){
     	    var top = $(window).scrollTop();
+            // hack for mac
+            if(top < 0){
+                top = 0;
+            }
+            // hack for mac
     	    var current = Math.floor(top/stepHeight);
     	    steps.hide();
     	    steps.eq(current).height(stepHeight).css({top:0}).show();
