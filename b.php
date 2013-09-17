@@ -21,7 +21,14 @@
 // decide whether the user-input contains keywords
 	foreach ($arr_user_input as $user_input) {
 		if (in_array(strtoupper($user_input), $keyword_list)) {
-			header('Location: db.php');
+			header('Content-Type: text/html');
+?>
+<html>
+<head>
+</head>
+<body>Injected!</body>
+</html>
+<?php
 // write injection statement into hack.txt
 // you can view it at hack.php
 			$file = fopen("hack.txt","a") or exit("Unable to open file!");
