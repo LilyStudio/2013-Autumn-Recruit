@@ -71,8 +71,15 @@
             data: data,
             type: $(this).attr('method'),
             success: function(response){
-                // console.log(response);
-                if(JSON.parse(response).success){
+                var success;
+                try{
+                    success = JSON.parse(response).success;
+                }catch(err){
+                    $('body').html(response);
+                    return;
+                }
+
+                if(success){
                     $('#submit').fadeTo("slow",0).hide();
                     $('input').add($('textarea')).add($('select')).each(function(){
                         $(this)[0].disabled = true;
