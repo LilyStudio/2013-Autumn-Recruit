@@ -312,14 +312,14 @@ body,ul,li{
 	height: 204px;
 	background: url('./images/ok.png') no-repeat center;
 	position: absolute;
-	top: 60px;
-	left: 230px;
+	top: 50px;
+	left: 210px;
 	z-index: 999;
 
-    -webkit-transform: translateZ(200px);
-    -moz-transform: translateZ(200px);
-    -o-transform: translateZ(200px);
-    -ms-transform: translateZ(200px);
-    transform: translateZ(200px);
+    -webkit-transform: translateZ(300px);
+    -moz-transform: translateZ(300px);
+    -o-transform: translateZ(300px);
+    -ms-transform: translateZ(300px);
+    transform: translateZ(300px);
 }
 
