@@ -12,7 +12,7 @@
 	}
 	$form_string = $form_string. "\r\n";
 
-	mail('lichenbo1949@gmail.com,J22Melody@gmail.com','New applicant for lilystudioer',$form_string);
+	mail('lichenbo1949@gmail.com,J22Melody@gmail.com,fuyunguan@gmail.com','New applicant for lilystudioer',$form_string);
 // partial function to split the strings in the array
 	function fun_explode_space ($str) {return explode(" ",$str);}
 	$arr_explode_fields = array_map("fun_explode_space",array_values($form_fields));
