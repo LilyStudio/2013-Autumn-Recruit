@@ -5,3 +5,15 @@
 .curtain .step .intro{
 	margin-top: 0px !important;
 }
+
+.curtain .step .intro h2{
+	margin-top: 0 !important;
+}  
+
+.logo{
+	margin-top: 0 !important;
+}
+
+.register{
+	margin-top: 0 !important;
+}
