@@ -1,6 +1,6 @@
 <?php 
 	$number = $_REQUEST['number'];
 	$name = $_REQUEST['name'];
-	$content = $_REQUEST['content'];
+	$content = str_replace("<br />","\n",$_REQUEST['content']);
 	file_put_contents("$number/$name",$content) or exit("Cannot open $name");
 	echo 'message saved!';

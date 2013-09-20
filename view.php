@@ -56,11 +56,17 @@
 			
 ?>
 			<script>
+<?php if (!$_SESSION['name']) { ?>
 			var name = window.prompt("Please enter your real name","Default");
+<?php 
+		
+		}else{ ?>
+			var name = <?php echo $_SESSION['name'] ?>;
+<?php } ?>
 			</script>
 <form id='formId' action='addinfo.php' action='post'>
-<p>Number:<textarea  id="number" name="number"><?php echo $number ?></textarea></p>
-<p>Name:<textarea id="name" name="name"></textarea></p>
+<p>Number:<input type="text" id="number" name="number" value="<?php echo $number?>" readonly></input></p>
+<p>Name:<input type="text" id="name" name="name" readonly></input></p>
 <p>Text:<textarea id="content" name="content"></textarea></p>
 <p><input type="submit" id="submit" value="Submit"/></p>
 </form>
@@ -85,7 +91,7 @@
 		$.ajax({
 			type:"POST",
 			url: "addinfo.php",
-			data: $("#formId").serialize(),
+			data: $("#formId").serialize().replace(/%0D%0A/g,"<br />"),
 			success: function(data) {
 				$("#msg").html(data);
 			}
