@@ -67,6 +67,14 @@
 <div id="msg"></div>
 			<script>
 			document.getElementById('name').value = name;
+			$.ajax({
+				type:"POST",
+				url: "getfile.php",
+				data: "number=<?php echo $number ?>&name="+name,
+				success: function(data) {
+					$("#content").html(data);
+				}
+			});
 			</script>
 <?php
 	}
@@ -79,7 +87,7 @@
 			url: "addinfo.php",
 			data: $("#formId").serialize(),
 			success: function(data) {
-				$("#msg").html('saved ' + data);
+				$("#msg").html(data);
 			}
 		});
 		return false;
