@@ -1,12 +1,18 @@
+<?php session_start(); ?>
 <html>
-<head></head>
+<head>
+<script>
+//ajax required
+</script>
+</head>
 <body>
-<h1> View Page </h1>
+<h1> Welcome to Project LilyPRISM !</h1>
 <table border="2">
 <tr><th>Time</th><th>Name</th><th>Number</th><th>Dept</th><th>Phone</th><th>Cat</th><th>Experience</th><th>Hobby</th>
 </tr>
 <?php 
 	$number = $_REQUEST['number'];
+	$edit = $_REQUEST['edit'];
 	header("Content-Type:text/html;charset=UTF-8");
 	$file = fopen("table.txt","r") or exit("Unable to open file!");
 	while (($line = fgets($file)) !== false ) {
@@ -35,19 +41,35 @@
 ?>
 </table>
 <?php 
-	if ($number) {
-			if ($files = scandir('$number')) {
-					foreach( $files as $file_name ) {
-						$file = fopen( $file_name, "r") or exit("Unable to open file $file_name!");
-						echo "<h2>$file_name</h2>";
-						while (($line = fgets($file)) !== false) {
-							echo "<p>$line</p>";
+	if ($number && !$edit) {
+			echo "<h2><a href='view.php?number=$number&edit=true'>添加信息</a></h2>";
+			if ($files = scandir("$number")) {
+					foreach( $files as $index=>$file_name ) {
+						if ($index > 1) {
+							$file = file_get_contents("$number/$file_name") or exit("Unable to open file $file_name!");
+							echo "<h2>$file_name</h2>";
+							echo "<p>$file</p>";
 						}
-						fclose($file);
 					}
 			} else {
-					mkdir('$number');
+					mkdir("$number");
 			}
+	} elseif ($number && $edit) {
+			
+?>
+			<script>
+			var name = window.prompt("Please enter your real name","Default");
+			</script>
+<form action="addinfo.php" method="post">
+<p>Number:<textarea  id="number" name="number"><?php echo $number ?></textarea></p>
+<p>Name:<textarea id="name" name="name"></textarea></p>
+<p>Text:<textarea id="content" name="content"></textarea></p>
+<p><input type="submit" id="submit" value="Submit"/></p>
+</form>
+			<script>
+			document.getElementById('name').value = name;
+			</script>
+<?php
 	}
 ?>
 </body>

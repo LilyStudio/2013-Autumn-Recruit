@@ -8,6 +8,7 @@
 // generate string write to txt.
 	$form_string = "$date";
 	foreach ($form_fields as $field_key => $field_value) {
+		$field_value = trim(preg_replace('/\s+/',' ',$field_value));
 		$form_string = $form_string. "\t$field_value";
 	}
 	$form_string = $form_string. "\r\n";
