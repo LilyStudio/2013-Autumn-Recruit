@@ -13,10 +13,10 @@
 	$edit = $_REQUEST['edit'];
 	header("Content-Type:text/html;charset=UTF-8");
 	$file = fopen("table.txt","r") or exit("Unable to open file!");
-	while (($line = fgets($file)) !== false ) {
+	while (($line = fgets($file)) != false ) {
 		$arr_line = explode("\t",$line);
-		echo "<tr>";
 		if (!$number) {
+			echo "<tr>";
 			foreach($arr_line as $index=>$cell) {
 				if ($index == 1) {
 					echo "<td><a href='view.php?number=$arr_line[2]'>$cell</a></td>";
@@ -25,27 +25,29 @@
 					echo "<td>$cell</td>";
 				}
 			}
+			echo "</tr>";
 		} else {
-			foreach($arr_line as $cell) {
-				if ($arr_line[2] == $number) {
+			if ($arr_line[2] == $number) {
+				echo "<tr>";
+				foreach($arr_line as $cell) {
 					echo "<td>$cell</td>";
 				}
+				echo "</tr>";
 			}	
 		
 		}
-		echo "</tr>";
 	}
 	fclose($file);
 ?>
 </table>
 <?php 
 	if ($number && !$edit) {
-			echo "<h2><a href='view.php?number=$number&edit=true'>添加信息</a></h2>";
+			echo "<h2><a href='view.php?number=$number&edit=true'>添加/修改你的记录</a></h2>";
 			if ($files = scandir("$number")) {
 					foreach( $files as $index=>$file_name ) {
 						if ($index > 1) {
-							$file = file_get_contents("$number/$file_name") or exit("Unable to open file $file_name!");
-							echo "<h2>$file_name</h2>";
+							$file = str_replace("\n","<br />",file_get_contents("$number/$file_name")) or exit("Unable to open file $file_name!");
+							echo "<h2>$file_name 的记录</h2>";
 							echo "<p>$file</p>";
 						}
 					}
@@ -57,7 +59,10 @@
 ?>
 			<script>
 <?php if (!$_SESSION['name']) { ?>
-			var name = window.prompt("Please enter your real name","Default");
+		var name = window.prompt("请输入你的名字","Default");
+		while (name == '' || name == 'null') {
+			name = window.prompt("请输入你的名字","Default");
+		};
 <?php 
 		
 		}else{ ?>
@@ -65,10 +70,10 @@
 <?php } ?>
 			</script>
 <form id='formId' action='addinfo.php' action='post'>
-<p>Number:<input type="text" id="number" name="number" value="<?php echo $number?>" readonly></input></p>
-<p>Name:<input type="text" id="name" name="name" readonly></input></p>
-<p>Text:<textarea id="content" name="content"></textarea></p>
-<p><input type="submit" id="submit" value="Submit"/></p>
+<p>学号:<input type="text" id="number" name="number" value="<?php echo $number?>" readonly></input></p>
+<p>你的名字:<input type="text" id="name" name="name" readonly></input></p>
+<p>记录一下吧:<br /><textarea id="content" name="content" rows="18" cols="40"></textarea></p>
+<p><input type="submit" id="submit" value="保存"/></p>
 </form>
 <div id="msg"></div>
 			<script>
@@ -94,6 +99,7 @@
 			data: $("#formId").serialize().replace(/%0D%0A/g,"<br />"),
 			success: function(data) {
 				$("#msg").html(data);
+				$("#msg").delay(5000).fadeOut();
 			}
 		});
 		return false;
