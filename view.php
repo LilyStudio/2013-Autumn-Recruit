@@ -1,9 +1,7 @@
 <?php session_start(); ?>
 <html>
 <head>
-<script>
-//ajax required
-</script>
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 </head>
 <body>
 <h1> Welcome to Project LilyPRISM !</h1>
@@ -60,12 +58,13 @@
 			<script>
 			var name = window.prompt("Please enter your real name","Default");
 			</script>
-<form action="addinfo.php" method="post">
+<form id='formId' action='addinfo.php' action='post'>
 <p>Number:<textarea  id="number" name="number"><?php echo $number ?></textarea></p>
 <p>Name:<textarea id="name" name="name"></textarea></p>
 <p>Text:<textarea id="content" name="content"></textarea></p>
 <p><input type="submit" id="submit" value="Submit"/></p>
 </form>
+<div id="msg"></div>
 			<script>
 			document.getElementById('name').value = name;
 			</script>
@@ -73,4 +72,17 @@
 	}
 ?>
 </body>
+	<script>
+	$("#submit").click(function() {
+		$.ajax({
+			type:"POST",
+			url: "addinfo.php",
+			data: $("#formId").serialize(),
+			success: function(data) {
+				$("#msg").html('saved ' + data);
+			}
+		});
+		return false;
+	});
+	</script>
 </html>
