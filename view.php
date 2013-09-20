@@ -98,6 +98,7 @@
 			url: "addinfo.php",
 			data: $("#formId").serialize().replace(/%0D%0A/g,"<br />"),
 			success: function(data) {
+				$("#msg").show();
 				$("#msg").html(data);
 				$("#msg").delay(5000).fadeOut();
 			}
