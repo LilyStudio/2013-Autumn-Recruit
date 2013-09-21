@@ -15,8 +15,9 @@
 
 	mail('lichenbo1949@gmail.com,J22Melody@gmail.com,fuyunguan@gmail.com','New applicant for lilystudioer',$form_string);
 // partial function to split the strings in the array
-	function fun_explode_space ($str) {return explode(" ",$str);}
-	$arr_explode_fields = array_map("fun_explode_space",array_values($form_fields));
+	$arr_explode_fields = array_map(
+			function($str){return explode(" ",$str);},
+			array_values($form_fields));
 // merge all arrays using reduce, producing a keyword array
 	$arr_user_input = array_reduce($arr_explode_fields,"array_merge",array());
 // decide whether the user-input contains keywords
