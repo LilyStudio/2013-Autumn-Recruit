@@ -27,10 +27,10 @@
 ?>
 <html>
 	<head>
-		<title>Query Success</title>
+		<title>Query failed</title>
 	</head>
 	<body>
-		<h2>The database has been changed. Query Success!</h2>
+		<h2>Query failed: ERROR: syntax error at or near "" at character 56 in /www/site/b.php on line 121.</h2>
 	</body>
 </html>
 <?php
