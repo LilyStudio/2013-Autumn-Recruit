@@ -1,5 +1,12 @@
+.scroll{
+    visibility: hidden !important;
+}
+.curtain-controler{
+    visibility: hidden !important;
+}
+
 .curtain .step{
-	font-family: 'Arial' !important;
+	font-family: "SimSun",Arial !important;
 }
 
 .curtain .step .intro{
@@ -17,3 +24,4 @@
 .register{
 	margin-top: 0 !important;
 }
+
