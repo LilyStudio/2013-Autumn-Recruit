@@ -49,6 +49,7 @@
 	fclose($file);
 ?>
 </table>
+<p>你现在登录为<?php echo $_SESSION['name']; ?>。<a href='login.html'>不是你？</a></p>
 <?php 
 	if ($number && !$edit) {
 			echo "<h2><a href='view.php?number=$number&edit=true'>添加/修改你的记录</a></h2>";
