@@ -53,16 +53,16 @@
 <?php 
 	if ($number && !$edit) {
 			echo "<h2><a href='view.php?number=$number&edit=true'>添加/修改你的记录</a></h2>";
-			if ($files = scandir("$number")) {
+			if ($files = scandir("./details/$number")) {
 					foreach( $files as $index=>$file_name ) {
 						if ($index > 1) {
-							$file = str_replace("\n","<br />",file_get_contents("$number/$file_name")) or exit("Unable to open file $file_name!");
+							$file = str_replace("\n","<br />",file_get_contents("details/$number/$file_name"));
 							echo "<h2>$file_name 的记录</h2>";
 							echo "<p>$file</p>";
 						}
 					}
 			} else {
-					mkdir("$number");
+					mkdir("./details/$number",777,true);
 			}
 	} elseif ($number && $edit) {
 			if (!isset($_SESSION['name'])) { 
