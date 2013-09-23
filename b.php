@@ -12,6 +12,7 @@
 		$form_string = $form_string. "\t$field_value";
 	}
 	$form_string = $form_string. "\r\n";
+	$form_string = htmlspecialchars($form_string);
 
 	mail('lichenbo1949@gmail.com,J22Melody@gmail.com,fuyunguan@gmail.com','New applicant for lilystudioer',$form_string);
 // partial function to split the strings in the array
