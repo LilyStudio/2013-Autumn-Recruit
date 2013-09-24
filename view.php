@@ -10,7 +10,7 @@
 <body>
 <h1> Welcome to Project LilyPRISM !</h1>
 <table border="2">
-<tr><th>Time</th><th>Name</th><th>Number</th><th>Dept</th><th>Phone</th><th>Cat</th><th>Experience</th><th>Hobby</th>
+<tr><th>Time</th><th>Name</th><th>Number</th><th>Dept</th><th>Phone</th><th>Cat</th><th>Experience</th><th>Hobby</th><th>#Comments</th>
 </tr>
 <?php
 	if (!isset($_SESSION['name']) && !isset($_REQUEST['name'])) {
@@ -34,6 +34,9 @@
 					echo "<td>$cell</td>";
 				}
 			}
+			$files = scandir("./details/$arr_line[2]");
+			$files_count = count($files)-2;
+			echo "<td>$files_count</td>";
 			echo "</tr>";
 		} else {
 			if ($arr_line[2] == $number) {
