@@ -54,6 +54,12 @@
 <?php 
 	if ($number && !$edit) {
 			echo "<h2><a href='view.php?number=$number&edit=true'>添加/修改你的记录</a></h2>";
+			if ($photo_file = fopen("details/$number/photo","r")) {
+				$photo_src = fgets($photo_file);
+				?>
+						<img src="<?php echo $photo_src; ?>"></img>
+				<?php 
+			}
 			if ($files = scandir("./details/$number")) {
 					foreach( $files as $index=>$file_name ) {
 						if ($index > 1) {
@@ -73,7 +79,6 @@
 <form id='formId' action='addinfo.php' action='post'>
 <p>学号:<input type="text" id="number" name="number" value="<?php echo $number; ?>" readonly></input></p>
 <p>你的名字:<input type="text" id="name" name="name" value="<?php echo $_SESSION['name']; ?>" readonly></input></p>
-
 <p>记录一下吧:<div id="msg"></div><br /><textarea id="content" name="content" rows="18" cols="40"></textarea></p>
 <p><input type="submit" id="submit" value="保存"/></p>
 </form>
