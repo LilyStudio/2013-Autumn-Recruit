@@ -2,26 +2,41 @@
 	if(!isset($_SESSION)) {
 			session_start();
 	}
-?>
-<html>
-<head>
-<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-</head>
-<body>
-<h1> Welcome to Project LilyPRISM !</h1>
-<p>Notice: 想要添加照片，请先以photo账号登陆，之后在记录中添加图片地址（需要添加"http://"），每张照片一行，不需要任何标签，照片会显示在所有记录的前面</p>
-<table border="2">
-<tr><th>Time</th><th>Name</th><th>Number</th><th>Dept</th><th>Phone</th><th>Cat</th><th>Experience</th><th>Hobby</th><th>#Comments</th>
-</tr>
-<?php
+	header("Content-Type:text/html;charset=UTF-8");
 	if (!isset($_SESSION['name']) && !isset($_REQUEST['name'])) {
 		header("Location: login.html");
 	} elseif (isset($_REQUEST['name'])) {
 		$_SESSION['name'] = $_REQUEST['name'];
 	}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+		<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+		<div class="container">
+				<div class="row">
+						<div class="span7 offset3">
+								<h1> Welcome to Project LilyPRISM !</h1>
+						</div>
+				</div>
+		<div class="alert">
+				<span class="alert-heading">Notice:</span>
+				想要添加照片，请先以<a href="login.html">photo账号登陆</a>，之后在记录中添加图片地址（需要添加"http://"），每张照片一行，不需要任何标签，照片会显示在所有记录的前面
+		</div>
+		<div class="alert alert-info">你现在登录为<?php echo $_SESSION['name']; ?>。<a href='login.html'>不是你？</a>
+		</div>
+<table border="2">
+<tr><th>Time</th><th>Name</th><th>Number</th><th>Dept</th><th>Phone</th><th>Cat</th><th>Experience</th><th>Hobby</th><th>#Comments</th>
+</tr>
+<?php
+	
 	$number = $_REQUEST['number'];
 	$edit = $_REQUEST['edit'];
-	header("Content-Type:text/html;charset=UTF-8");
 	$file = fopen("table.txt","r") or exit("Unable to open file!");
 	while (($line = fgets($file)) != false ) {
 		$arr_line = explode("\t",$line);
@@ -53,7 +68,6 @@
 	fclose($file);
 ?>
 </table>
-<p>你现在登录为<?php echo $_SESSION['name']; ?>。<a href='login.html'>不是你？</a></p>
 <p><a href="view.php">返回列表</a></p>
 <?php 
 	if ($number && !$edit) {
