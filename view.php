@@ -18,21 +18,34 @@
 		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
+		<!-- container begin -->
 		<div class="container">
 				<div class="row">
 						<div class="span7 offset3">
 								<h1> Welcome to Project LilyPRISM !</h1>
 						</div>
 				</div>
-		<div class="alert">
-				<span class="alert-heading">Notice:</span>
-				想要添加照片，请先以<a href="login.html">photo账号登陆</a>，之后在记录中添加图片地址（需要添加"http://"），每张照片一行，不需要任何标签，照片会显示在所有记录的前面
-		</div>
-		<div class="alert alert-info">你现在登录为<?php echo $_SESSION['name']; ?>。<a href='login.html'>不是你？</a>
-		</div>
-<table border="2">
-<tr><th>Time</th><th>Name</th><th>Number</th><th>Dept</th><th>Phone</th><th>Cat</th><th>Experience</th><th>Hobby</th><th>#Comments</th>
-</tr>
+				<div class="alert">
+						<span class="alert-heading"><strong>Notice:</strong></span>
+						想要添加照片，请先以<a href="login.html">photo账号登陆</a>，之后在记录中添加图片地址（需要添加"http://"），每张照片一行，不需要任何标签，照片会显示在所有记录的前面
+				</div>
+				<div class="alert alert-info">你现在登录为<strong><?php echo $_SESSION['name']; ?></strong>。<a href='login.html'>不是你？</a>
+				</div>
+				<table border="2" class="table table-striped">
+				<thead>
+						<tr>
+								<th>Time</th>
+								<th>Name</th>
+								<th>Number</th>
+								<th>Dept</th>
+								<th>Phone</th>
+								<th>Cat</th>
+								<th>Experience</th>
+								<th>Hobby</th>
+								<th>#Comments</th>
+						</tr>
+				</thead>
+				<tbody>
 <?php
 	
 	$number = $_REQUEST['number'];
@@ -67,24 +80,36 @@
 	}
 	fclose($file);
 ?>
-</table>
-<p><a href="view.php">返回列表</a></p>
+				</tbody>
+				</table>
+				<p><a class="btn" href="view.php"><i class="icon-arrow-left"></i>返回列表</a></p>
+
+<!-- view.php for displaying overall information end -->
+
+<!-- view.php for displaying specific member start -->
+
 <?php 
 	if ($number && !$edit) {
-			echo "<h2><a href='view.php?number=$number&edit=true'>添加/修改你的记录</a></h2>";
+			echo "<h2><a class='btn btn-success' href='view.php?number=$number&edit=true'><i class='icon-pencil icon-white'></i>添加/修改你的记录</a></h2>";
 			if ($photo_file = fopen("details/$number/photo","r")) {
+				?>
+					<div class="row pull-right">
+				<?php
 				while($photo_src = fgets($photo_file)) {
 				?>
-						<img src="<?php echo $photo_src; ?>"></img>
+						<img class="span2" src="<?php echo $photo_src; ?>"></img>
 				<?php 
-				}
-			}
+				} ?>
+					</div>
+				<?php }
 			if ($files = scandir("./details/$number")) {
 					foreach( $files as $index=>$file_name ) {
 						if ($index > 1) {
 							$file = str_replace("\n","<br />",file_get_contents("details/$number/$file_name"));
-							echo "<h2>$file_name 的记录</h2>";
+							echo "<blockquote>";
 							echo "<p>$file</p>";
+							echo "<small>$file_name 的记录</small>";
+							echo "</blockquote>";
 						}
 					}
 			} else {
@@ -95,12 +120,35 @@
 					header("Location: login.html");
 			}
 ?>
-<form id='formId' action='addinfo.php' action='post'>
-<p>学号:<input type="text" id="number" name="number" value="<?php echo $number; ?>" readonly></input></p>
-<p>你的名字:<input type="text" id="name" name="name" value="<?php echo $_SESSION['name']; ?>" readonly></input></p>
-<p>记录一下吧:<div id="msg"></div><br /><textarea id="content" name="content" rows="18" cols="40"></textarea></p>
-<p><input type="submit" id="submit" value="保存"/></p>
-</form>
+
+<!-- view.php for displaying specific member end -->
+
+<!-- view.php for displaying comments start -->
+
+				<form id='formId' class="well form-horizontal" action='addinfo.php' action='post'>
+						<label class="row">
+							<span class="span2">学号:</span>
+							<span class="span3">
+								<input type="text" id="number"  name="number" value="<?php echo $number; ?>" readonly="readonly"></input>
+							</span>
+						</label>
+						<label class="row">
+							<span class="span2">你的名字:</span>
+							<span class="span3">
+								<input type="text" id="name" name="name" value="<?php echo $_SESSION['name']; ?>" readonly="readonly"></input>
+							</span>
+							<span id="msg" class="alert alert-info" style="display:none;">
+							</span>
+						</label>
+						<label class="row">
+							<span class="span2">记录一下吧:</span>
+							<span class="span6">
+								<textarea id="content" class="span6" name="content" rows="10"></textarea>
+							</span>
+						</label>
+					
+						<button type="submit" class="btn btn-primary" id="submit">保存</button>
+				</form>
 			<script>
 			$.ajax({
 				type:"POST",
@@ -114,6 +162,8 @@
 <?php
 	}
 ?>
+		</div>
+		<!-- container end -->
 </body>
 	<script>
 	$("#submit").click(function() {
