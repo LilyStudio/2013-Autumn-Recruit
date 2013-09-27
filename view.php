@@ -14,14 +14,13 @@
 <head>
 		<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" >
 </head>
 <body>
 		<!-- container begin -->
 		<div class="container">
 				<div class="row">
-						<div class="span7 offset3">
+						<div class="span8 offset2">
 								<h1> Welcome to Project LilyPRISM !</h1>
 						</div>
 				</div>
@@ -42,7 +41,7 @@
 								<th>Cat</th>
 								<th>Experience</th>
 								<th>Hobby</th>
-								<th>#Comments</th>
+								<th>#</th>
 						</tr>
 				</thead>
 				<tbody>
@@ -69,10 +68,13 @@
 			echo "</tr>";
 		} else {
 			if ($arr_line[2] == $number) {
+				$files = scandir("./details/$arr_line[2]");
+				$files_count = count($files)-2;
 				echo "<tr>";
 				foreach($arr_line as $cell) {
 					echo "<td>$cell</td>";
 				}
+				echo "<td>$files_count</td>";
 				echo "</tr>";
 			}	
 		
@@ -82,7 +84,6 @@
 ?>
 				</tbody>
 				</table>
-				<p><a class="btn" href="view.php"><i class="icon-arrow-left"></i>返回列表</a></p>
 
 <!-- view.php for displaying overall information end -->
 
@@ -90,6 +91,7 @@
 
 <?php 
 	if ($number && !$edit) {
+			echo "<p><a class=\"btn\" href=\"view.php \"><i class=\"icon-arrow-left\"></i>返回列表</a></p>";
 			echo "<h2><a class='btn btn-success' href='view.php?number=$number&edit=true'><i class='icon-pencil icon-white'></i>添加/修改你的记录</a></h2>";
 			if ($photo_file = fopen("details/$number/photo","r")) {
 				?>
@@ -124,6 +126,7 @@
 <!-- view.php for displaying specific member end -->
 
 <!-- view.php for displaying comments start -->
+				<p><a class="btn" href="view.php?number=<?php echo $number?>"><i class="icon-arrow-left"></i>返回评论列表</a></p>
 
 				<form id='formId' class="well form-horizontal" action='addinfo.php' action='post'>
 						<label class="row">
