@@ -14,7 +14,14 @@
 <head>
 		<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./jquery.tablesorter.min.js"></script>
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+		<link href="./tablesorter.css" rel="stylesheet">
+		<style>
+			th {
+				white-space:pre;
+			}
+		</style>
 </head>
 <body>
 		<!-- container begin -->
@@ -30,18 +37,18 @@
 				</div>
 				<div class="alert alert-info">你现在登录为<strong><?php echo $_SESSION['name']; ?></strong>。<a href='login.html'>不是你？</a>
 				</div>
-				<table border="2" class="table table-striped">
+				<table border="2" class="table table-striped tablesorter">
 				<thead>
 						<tr>
-								<th>Time</th>
-								<th>Name</th>
-								<th>Number</th>
-								<th>Dept</th>
-								<th>Phone</th>
-								<th>Cat</th>
-								<th>Experience</th>
-								<th>Hobby</th>
-								<th>#</th>
+								<th>提交时间    </th>
+								<th>姓名    </th>
+								<th>学号    </th>
+								<th>院系    </th>
+								<th>联系方式    </th>
+								<th>组别    </th>
+								<th>平时经历    </th>
+								<th>个人爱好    </th>
+								<th>评论数    </th>
 						</tr>
 				</thead>
 				<tbody>
@@ -181,6 +188,10 @@
 			}
 		});
 		return false;
+	});
+
+	$(document).ready(function() {
+		$(".tablesorter").tablesorter();
 	});
 	</script>
 </html>
