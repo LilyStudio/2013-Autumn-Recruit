@@ -20,6 +20,7 @@
 		<style>
 			th {
 				white-space:pre;
+				padding-right:30px !important;
 			}
 		</style>
 </head>
@@ -40,15 +41,15 @@
 				<table border="2" class="table table-striped tablesorter">
 				<thead>
 						<tr>
-								<th>提交时间    </th>
-								<th>姓名    </th>
-								<th>学号    </th>
-								<th>院系    </th>
-								<th>联系方式    </th>
-								<th>组别    </th>
-								<th>平时经历    </th>
-								<th>个人爱好    </th>
-								<th>评论数    </th>
+								<th>提交时间</th>
+								<th>姓名</th>
+								<th>学号</th>
+								<th>院系</th>
+								<th>联系方式</th>
+								<th>组别</th>
+								<th>平时经历</th>
+								<th>个人爱好</th>
+								<th>评论数</th>
 						</tr>
 				</thead>
 				<tbody>
