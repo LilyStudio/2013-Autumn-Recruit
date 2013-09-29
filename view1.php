@@ -21,6 +21,10 @@
 			th {
 				white-space:pre;
 				padding-right:30px !important;
+				font-size:14px !important;
+			}
+			table {
+				font-size:14px !important;
 			}
 		</style>
 </head>
@@ -64,7 +68,7 @@
 			echo "<tr>";
 			foreach($arr_line as $index=>$cell) {
 				if ($index == 1) {
-					echo "<td><a href='view.php?number=$arr_line[2]'>$cell</a></td>";
+					echo "<td><a href='view1.php?number=$arr_line[2]'>$cell</a></td>";
 				}
 				else {
 					echo "<td>$cell</td>";
@@ -99,8 +103,8 @@
 
 <?php 
 	if ($number && !$edit) {
-			echo "<p><a class=\"btn\" href=\"view.php \"><i class=\"icon-arrow-left\"></i>返回列表</a></p>";
-			echo "<h2><a class='btn btn-success' href='view.php?number=$number&edit=true'><i class='icon-pencil icon-white'></i>添加/修改你的记录</a></h2>";
+			echo "<p><a class=\"btn\" href=\"view1.php \"><i class=\"icon-arrow-left\"></i>返回列表</a></p>";
+			echo "<h2><a class='btn btn-success' href='view1.php?number=$number&edit=true'><i class='icon-pencil icon-white'></i>添加/修改你的记录</a></h2>";
 			if ($photo_file = fopen("details/$number/photo","r")) {
 				?>
 					<div class="row pull-right">
@@ -134,7 +138,7 @@
 <!-- view.php for displaying specific member end -->
 
 <!-- view.php for displaying comments start -->
-				<p><a class="btn" href="view.php?number=<?php echo $number?>"><i class="icon-arrow-left"></i>返回评论列表</a></p>
+				<p><a class="btn" href="view1.php?number=<?php echo $number?>"><i class="icon-arrow-left"></i>返回评论列表</a></p>
 
 				<form id='formId' class="well form-horizontal" action='addinfo.php' action='post'>
 						<label class="row">
