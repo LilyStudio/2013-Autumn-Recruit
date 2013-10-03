@@ -149,11 +149,12 @@
 						</label>
 						<label class="row">
 							<span class="span2">你的名字:</span>
-							<span class="span3">
-								<input type="text" id="name" name="name" value="<?php echo $_SESSION['name']; ?>" readonly="readonly"></input>
+							<span class="span5">
+								<input class="span3" type="text" id="name" name="name" value="<?php echo $_SESSION['name']; ?>" readonly="readonly"></input>
+								<span id="msg" class="alert alert-info" style="display:none;">
+								</span>
 							</span>
-							<span id="msg" class="alert alert-info" style="display:none;">
-							</span>
+
 						</label>
 						<label class="row">
 							<span class="span2">记录一下吧:</span>
@@ -189,7 +190,7 @@
 			success: function(data) {
 				$("#msg").show();
 				$("#msg").html(data);
-				$("#msg").delay(5000).fadeOut();
+				$("#msg").delay(2000).fadeOut();
 			}
 		});
 		return false;
