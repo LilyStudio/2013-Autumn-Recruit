@@ -15,8 +15,10 @@
 		<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./jquery.tablesorter.min.js"></script>
+		<script type="text/javascript" src="./jquery-ui.js"></script>
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" >
 		<link href="./tablesorter.css" rel="stylesheet">
+		<link href="./jquery-ui.css" rel="stylesheet">
 		<style>
 			th {
 				white-space:pre;
@@ -25,6 +27,9 @@
 			}
 			table {
 				font-size:14px !important;
+			}
+			.alert {
+				display:none;
 			}
 		</style>
 </head>
@@ -151,7 +156,7 @@
 							<span class="span2">你的名字:</span>
 							<span class="span5">
 								<input class="span3" type="text" id="name" name="name" value="<?php echo $_SESSION['name']; ?>" readonly="readonly"></input>
-								<span id="msg" class="alert alert-info" style="display:none;">
+								<span id="msg" class="label label-success" style="display:none;">
 								</span>
 							</span>
 
@@ -198,6 +203,7 @@
 
 	$(document).ready(function() {
 		$(".tablesorter").tablesorter();
+		$(".alert").show("shake",{},500,function(){});
 	});
 	</script>
 </html>
