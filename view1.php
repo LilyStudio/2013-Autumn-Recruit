@@ -3,10 +3,14 @@
 			session_start();
 	}
 	header("Content-Type:text/html;charset=UTF-8");
-	if (!isset($_SESSION['name']) && !isset($_REQUEST['name'])) {
-		header("Location: login.html");
-	} elseif (isset($_REQUEST['name'])) {
+	if (isset($_SESSION['name']) && !isset($_REQUEST['password'])) {
+		
+	} elseif (isset($_REQUEST['name']) && $_REQUEST['password']=="aaaaaaaa") {
 		$_SESSION['name'] = $_REQUEST['name'];
+	} elseif (isset($_SESSION['name']) && $_REQUEST['password']=="aaaaaaaa") {
+	
+	} else {
+		header("Location: login.html");
 	}
 ?>
 <!DOCTYPE html>
@@ -16,7 +20,7 @@
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./jquery.tablesorter.min.js"></script>
 		<script type="text/javascript" src="./jquery-ui.js"></script>
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="./tablesorter.css" rel="stylesheet">
 		<link href="./jquery-ui.css" rel="stylesheet">
 		<style>
